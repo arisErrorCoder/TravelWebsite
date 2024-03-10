@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleTG.css">
+    <title>Your Website Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+rel="stylesheet"
+/>
+<link
+href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+rel="stylesheet"
+/>
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css"
+rel="stylesheet"
+/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+<style>
+        
+        .signup-link {
+            text-align: center;
+            margin-top: 16px;
+            color: #3498db;
+            cursor: pointer;
+        }
+
+        .signup-link:hover {
+            text-decoration: underline;
+        }
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+        /* Full-width input fields */
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 5px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        /* Set a style for all buttons */
+        button {
+            background-color: #04AA6D;
+            color: white;
+            padding: 10px 15px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 40%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        /* Extra styles for the cancel button */
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        /* Center the image and position the close button */
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
+        }
+
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+
+        .container {
+            padding: 0px;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            padding-top: 60px;
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: -17px auto 10px auto; /* 10% from the top, 15% from the bottom and centered */
+            border: 1px solid #888;
+            width: 30%; /* Adjusted width */
+            padding: 5px; /* Adjusted padding */
+        }
+
+        @media only screen and (max-width: 793px) {
+            .modal-content {
+                width: 80%;
+            }
+        }
+        /* The Close Button (x) */
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+
+        /* Add Zoom Animation */
+        .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s
+        }
+
+        @-webkit-keyframes animatezoom {
+            from {-webkit-transform: scale(0)} 
+            to {-webkit-transform: scale(1)}
+        }
+
+        @keyframes animatezoom {
+            from {transform: scale(0)} 
+            to {transform: scale(1)}
+        }
+
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+</style>
+</head>
+<body>
+
+<!-- <nav>
+    <div class="logo">
+        <img src="20231114_195627.png" alt="Logo">
+         <span class="logo-name">Your Logo Name</span> 
+    </div>
+    <div class="nav-items">
+        <a href="#" style="color: black;">Home</a>
+        <a href="#"style="color: black;">About Us</a>
+        <a href="#"style="color: black;">Services</a>
+        <a href="#"style="color: black;">Contact Us</a>
+    </div>
+    <div class="user-actions">
+        <a href="loginandsigupform.html" class="login-btn">Login</a>
+    </div>
+</nav>  -->
+
+
+<nav>
+  <div class="logo">
+      <img src="/images/icons/15537-200.png" alt="Logo"><span style="font-family: 'Righteous', sans-serif; color:#002642;"class="logo-name">TravelGuru</span> 
+  </div>
+  <input type="checkbox" id="menu-toggle" class="menu-toggle">
+  <label for="menu-toggle" class="menu-icon"><i class="fa-solid fa-bars"></i> </label>
+  <div class="nav-items">
+      <a href="#" style="color: black;">Home</a>
+      <a href="#aboutus" style="color: black;">About Us</a>
+      <a href="#services" style="color: black;">Package</a>
+      <a href="#contactus" style="color: black;">Contact Us</a>
+  </div>
+  <div class="user-actions">
+      <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="login-btn">Login</button>
+  </div>
+</nav>
+
+
+
+<!-- slider -->
+
+<div class="slider">
+    <div class="list">
+        <div class="item">
+            <img src="https://wallpapercave.com/wp/wp8738941.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="https://wallpapercave.com/wp/wp2481247.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="https://wallpapercave.com/wp/wp8788365.jpg"alt="">
+        </div>
+        <div class="item">
+            <img src="https://wallpapercave.com/wp/wp4956754.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="https://wallpapercave.com/wp/wp10649740.jpg" alt="">
+        </div>
+    </div>
+    <div class="buttons">
+        <button id="prev"><</button>
+        <button id="next">></button>
+    </div>
+    <ul class="dots">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<div id="aboutus" class="title-aboutus">About Us</div>
+
+<div class="parent">
+    <img src="images/icons/tourist-with-thumb-up-removebg-preview.png" alt="" class="j">
+    <p> <span>Travel With us :</span> <br>
+      "Jobs fill your pocket, but adventures fill your soul.” <br>
+      We completely swear by this and believe in fulfilling travel dreams that make you invariably rich by the day. We inspire our customers to live a rich life, full of unforgettable travel experiences.
+      <br><br>
+Our mission is not just to be a travel agency which helps you book a holiday; we want to be your travel partner who would go an extra mile to help you choose an ideal destination and learn more about the place you have been dreaming to visit.No matter how many travel experiences we sell every day, we ensure that you are the protagonist of your own travel story.</p>
+</div>
+
+
+
+
+<!-- card set of 3 -->
+<div class="card-text"id="services"><h2>Holiday Packages</h2></div>
+<div class="container-card">
+  <!-- Card 1 -->
+  <div class="card">
+    <img src="https://wallpapercave.com/dwp1x/wp8738941.jpg" alt="Image 1">    <div class="card-content">
+      <h3>London</h3>
+      <p>8 Days 7 Night + Meal</p>
+      <button class="book-button"><a href="booking-page9.html" style="color: whitesmoke;">View Details</a></Details></button>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card" id="services">
+    <img src="https://lh5.googleusercontent.com/p/AF1QipPoGrddc3l0N-ACkF884KHFXGuNHifod5QNs9SJ=w675-h390-n-k-no" alt="Card 2">
+    <div class="card-content">
+      <h3>South Korea</h3>
+      <p>7 Days 6 Nights + Breakfast </p>
+      <button class="book-button"><a href="booking-page8.html" style="color: whitesmoke;">View Details</a></button>
+    </div>
+  </div>
+
+ <div class="card">
+    <img src="https://media.cntraveler.com/photos/643d5d0a5722b1af03793a06/16:9/w_2560%2Cc_limit/Dal%2520Lake_GettyImages-1323846766.jpg" alt="Card 2">
+    <div class="card-content">
+      <h3> Kashmir </h3>
+      <p>10 Days 9 Nights + All Meals</p>
+      <button class="book-button"><a href="booking-page7.html" style="color: whitesmoke;">View Details</a></button>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://i.natgeofe.com/k/5b396b5e-59e7-43a6-9448-708125549aa1/new-york-statue-of-liberty.jpg" alt="Card 2">
+    <div class="card-content">
+      <h3>Mauritius</h3>
+      <p>5 Dyas 9 Nights + Half Board</p>
+      <button class="book-button"><a href="booking-page6.html" style="color: whitesmoke;">View Details</a></button>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcT9NtT3-XFSznmETzmMQA1nn5ADOawf0VD63yNsUgbrLVQeX4nwzyOKW0sXBVU6_EDRwLTHWNKd_1E4Os8Hb0kveREzhkOnY96ob_sRJw" alt="Card 2">
+    <div class="card-content">
+      <h3>Kerala</h3>
+      <p>6 Days 5 Nights + Breakfast</p>
+      <button class="book-button"><a href="booking-page5.html" style="color: whitesmoke;">View Details</a></button>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://static.independent.co.uk/2023/07/04/09/iStock-1193239486.jpg" alt="Card 2">
+    <div class="card-content">
+      <h3>Dubai</h3>
+      <p>6 Days 5 Nights + All Inclusive</p>
+      <button class="book-button"><a href="booking-page4.html" style="color: whitesmoke;">View Details</a></button>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://imageio.forbes.com/specials-images/imageserve/6468ea7be5b5bee9d12e9948/eiffel-tour-and-Paris-cityscape/0x0.jpg?format=jpg&height=1835&width=2767" alt="Card 2">
+    <div class="card-content">
+      <h3>Paris</h3>
+      <p>4 Days 3 Nights + Full board</p>
+      <button class="book-button"><a href="booking-page3.html" style="color: whitesmoke;">View Details</a></button>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://assets.architecturaldigest.in/photos/64acf255505cb5179481b6ac/16:9/w_1616,h_909,c_limit/Untitled%20design%20(53).png" alt="Card 2">
+    <div class="card-content">
+      <h3>Maldives</h3>
+      <p>5 Days 4 Nights + Breakfast</p>
+      <button class="book-button"><a href="booking-page2.html" style="color: whitesmoke;">View Details</a></button>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://tricycle.org/wp-content/uploads/2019/04/buddhism-in-vancouver.jpg" alt="Card 2">
+    <div class="card-content">
+      <h3>Goa</h3>
+      <p>3 Days 2 Nights + Breakfast
+        <br><strike> $4500 </strike>$4000
+      </p>
+      <button class="book-button"><a href="booking-page1.html" style="color: whitesmoke;">View Details</a></button>
+    </div>
+  </div>
+
+</div>
+
+<!-- the content on why choose us -->
+<div class="chooseus-container">
+    <div class="title"> <h2> why choose us ?</h2></div>
+    <div class="chooseus">
+       <img src="images/icons/globe.png" alt="">
+        <div class="chooseus-content">
+            <h3>World wide coverage</h3>
+            <p> Over 1,200,000 hotels in more than 200 countries and regions & flights to over 5,000 cities</p>
+        </div>  
+    </div>
+    <div class="chooseus">
+        <img src="images/icons/discount-tag.png" alt="">
+        <div class="chooseus-content">
+            <h3>Competitive Pricing</h3>
+            <p> with 500+ suppliers and the purchasing power of 300 million memebers we can save you more!</p>
+    </div>
+    </div>
+    <div class="chooseus">
+        <img src="images/icons/medal.png" alt="">
+        <div class="chooseus-content">
+            <h3>Award-winning Services</h3>
+            <p>Travel worry-free knowing that we're here if you ned us. 24Hours a day </p>
+    </div>
+    </div>
+</div>
+
+<!-- reviews tab -->
+<div id="aboutus" class="title-aboutus" style="color: white;">Reviews</div>
+      <div class="container-review">
+        <div class="container__left">
+          <h1>Read what our customers love about us</h1>
+          <p>
+            Over 200 companies frim diverse sectors consult us to enhance the
+            user experience of their products and services.
+          </p>
+          <p>
+            We have helped companies increase their customer base and generate
+            multifold revenue with our service.
+          </p>
+          <button style="color: white;">Read our success stories</button>
+        </div>
+        <div class="container__right">
+          <div class="card-review">
+            <img src="/TRAVEL GUIDE WEBSITE/images/icons/man.png" alt="user" />
+            <div class="card__content">
+              <span><i class="ri-double-quotes-l"></i></span>
+              <div class="card__details">
+                <p>
+                  This travel website sleighs the competition! Booked my holiday getaway hassle-free. From cozy cabins to festive flights, found it all here. Santa, who? My new go-to for holiday travels!
+                </p>
+                <h4>- Marnus Stephen</h4>
+              </div>
+            </div>
+          </div>
+          <div class="card-review">
+            <img src="/TRAVEL GUIDE WEBSITE/images/icons/old-man.png" alt="user" />
+            <div class="card__content">
+              <span><i class="ri-double-quotes-l"></i></span>
+              <div class="card__details">
+                <p>
+                  This travel website sleighs the competition! Booked my holiday getaway hassle-free. From cozy cabins to festive flights, found it all here. Santa, who? My new go-to for holiday travels!
+                </p>
+                <h4>- Andrew Jettpace</h4>
+              </div>
+            </div>
+          </div>
+          <div class="card-review">
+            <img src="/TRAVEL GUIDE WEBSITE/images/icons/woman.png" alt="user" />
+            <div class="card__content">
+              <span><i class="ri-double-quotes-l"></i></span>
+              <div class="card__details">
+                <p>
+                  Booking through this site was like a holiday dream. Seamless process, festive options, and a ho-ho-lot of savings. Rudolph would be proud! Santa-approved for stress-free holiday journeys!
+                </p>
+                <h4>- Stacy Stone</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </body>
+</html>
+
+
+<!-- <<<<<<<<<<<<<counter>>>>>>>>>>>> -->
+    <section class="wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
+        <div class="container">
+            <div class="row">
+                <!-- counter -->
+                <div class="col-md-3 col-sm-6 bottom-margin text-center counter-section wow fadeInUp sm-margin-bottom-ten animated" data-wow-duration="300ms" style="visibility: visible; animation-duration: 300ms; animation-name: fadeInUp;">
+                    <i class="fa fa-beer medium-icon"></i>
+                    <span id="anim-number-pizza" class="counter-number"></span>
+                    <span class="timer counter alt-font appear" data-to="980" data-speed="7000">2800</span>
+                    <p class="counter-title"> Travel Ordered</p>
+                </div>
+                <!-- end counter -->
+                <!-- counter -->
+                <div class="col-md-3 col-sm-6 bottom-margin text-center counter-section wow fadeInUp sm-margin-bottom-ten animated" data-wow-duration="600ms" style="visibility: visible; animation-duration: 600ms; animation-name: fadeInUp;">
+                    <i class="fa fa-heart medium-icon"></i>
+                     <span class="timer counter alt-font appear" data-to="980" data-speed="7000">980</span>
+                    <span class="counter-title">Happy Clients</span>
+                </div>
+                <!-- end counter -->
+                <!-- counter -->
+                <div class="col-md-3 col-sm-6 bottom-margin-small text-center counter-section wow fadeInUp xs-margin-bottom-ten animated" data-wow-duration="900ms" style="visibility: visible; animation-duration: 900ms; animation-name: fadeInUp;">
+                    <i class="fa fa-anchor medium-icon"></i>
+                     <span class="timer counter alt-font appear" data-to="810" data-speed="7000">810</span>
+                    <span class="counter-title">Projects Completed</span>
+                </div>
+                <!-- end counter -->
+                <!-- counter -->
+                <div class="col-md-3 col-sm-6 text-center counter-section wow fadeInUp animated" data-wow-duration="1200ms" style="visibility: visible; animation-duration: 1200ms; animation-name: fadeInUp;">
+                    <i class="fa fa-user medium-icon"></i>
+                     <span class="timer counter alt-font appear" data-to="600" data-speed="7000">600</span>
+                    <span class="counter-title">Clients Served</span>
+                </div>
+                <!-- end counter -->
+            </div>
+        </div>
+    </section>
+
+    <!-- contact us form -->
+
+    <div class="container-contactus" id="contactus">
+      <div class="content">
+        <div class="left-side">
+          <div class="address details">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="topic">Address</div>
+            <div class="text-one">Kailasha street, NP12</div>
+            <div class="text-two">Kailasha 06</div>
+          </div>
+          <div class="phone details">
+            <i class="fas fa-phone-alt"></i>
+            <div class="topic">Phone</div>
+            <div class="text-one">+0098 9893 5647</div>
+            <div class="text-two">+0096 3434 5678</div>
+          </div>
+          <div class="email details">
+            <i class="fas fa-envelope"></i>
+            <div class="topic">Email</div>
+            <div class="text-one">travelguru@gmail.com</div>
+            <div class="text-two">info.travelguru@gmail.com</div>
+          </div>
+        </div>
+        <div class="right-side">
+          <div class="topic-text">Send us a message</div>
+          <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
+        <form action="#">
+          <div class="input-box">
+            <input type="text" placeholder="Enter your name">
+          </div>
+          <div class="input-box">
+            <input type="text" placeholder="Enter your email">
+          </div>
+          <div class="input-box message-box">
+          <textarea name="" id="" cols="30" rows="10"></textarea>
+          </div>
+          <div class="button">
+            <input type="button" value="Send Now" >
+          </div>
+        </form>
+      </div>
+      </div>
+    </div>
+  
+
+
+    <div id="id01" class="modal">
+      <form class="modal-content animate" action="/action_page.php" method="post">
+          <div class="imgcontainer">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+              <img src="https://img.freepik.com/free-vector/login-concept-illustration_114360-739.jpg?w=740&t=st=1702486370~exp=1702486970~hmac=5dd42035a8e64adcfe4f400802be8437d744be1e89d8589dd11152be2be4ed36" alt="Avatar" class="avatar">
+          </div>
+          <div class="container">
+              <label for="uname"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="uname" required>
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+              <button type="submit">Login</button>
+              <label>
+                  <input type="checkbox" checked="checked" name="remember"> Remember me
+              </label>
+              
+              <!-- Toggle link to switch to the sign-up form -->
+              <div class="signup-link" onclick="toggleForms()">Don't have an account? Sign Up</div>
+          </div>
+          <div class="container" style="background-color:#f1f1f1">
+              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+          </div>
+      </form>
+  </div>
+  
+  <!-- ... (unchanged sign-up modal code) ... -->
+    <div id="id02" class="modal">
+      <form class="modal-content animate" action="/action_page.php" method="post">
+          <div class="imgcontainer">
+              <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+              <img src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-135.jpg?w=740&t=st=1702474499~exp=1702475099~hmac=d570608db1c05d9d2ffc36c9bc69afe06ace89b13401acd6468715cbaad3340a" alt="Avatar" class="avatar">
+          </div>
+          <div class="container">
+              <label for="uname"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="uname" required>
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+              <label for="psw-repeat"><b>Repeat Password</b></label>
+              <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+              <button type="submit">Sign Up</button>
+          </div>
+          <div class="container" style="background-color:#f1f1f1">
+              <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+          </div>
+      </form>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <<<<<<<<<<<<<<footer>>>>>>>>>>>> -->
+    <!-- Footer -->
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block" style="color:white;">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div style="color: white;">
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f" style="color: #3b5998;"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"style="color: #55acee;"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google" style="color: #dc4e41;"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram" style="color: #0077b5;"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin" style="color: #0077b5;"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github" style="color: #0077b5;"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4" style="color: white;">
+            <i class="fas fa-gem me-3"></i>TravelGuru
+          </h6>
+          <p style="color: white;">
+            "Jobs fill your pocket, but adventures fill your soul.” <br><br>
+      We completely swear by this and believe in fulfilling travel dreams that make you invariably rich by the day. We inspire our customers to live a rich life, full of unforgettable travel experiences.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4"style="color: white;">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Services
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Local Trips</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Holidays Plan</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Festival Booking</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Inter National Trip</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" style="color: white;">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">contact Us</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" style="color: white;">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> Kailasha street, NP12 Kailasha 06</p>
+          <p><i class="fas fa-envelope me-3"></i>
+            travelguru@gmail.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="color: white; background-color: #002642;">
+    © 2023 Copyright:
+    <a class="text-reset fw-bold" href="#">TravelGuru.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+    <!-- Scroll to Top button -->
+    <button id="return-to-top">Top</button>
+<script>
+  // ===== Scroll to Top ====
+document.addEventListener('DOMContentLoaded', function() {
+    var returnToTopButton = document.getElementById('return-to-top');
+
+    window.addEventListener('scroll', function() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            returnToTopButton.style.display = 'block';
+        } else {
+            returnToTopButton.style.display = 'none';
+        }
+    });
+
+    returnToTopButton.addEventListener('click', function() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    });
+});
+
+ // Get the modals
+ var modalLogin = document.getElementById('id01');
+    var modalSignUp = document.getElementById('id02');
+
+    // Function to toggle between login and sign-up forms
+    function toggleForms() {
+        modalLogin.style.display = "none";
+        modalSignUp.style.display = "block";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modalLogin) {
+            modalLogin.style.display = "none";
+        }
+        if (event.target == modalSignUp) {
+            modalSignUp.style.display = "none";
+        }
+    }
+
+     // Get the modals
+     var modalLogin = document.getElementById('id01');
+    var modalSignUp = document.getElementById('id02');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modalLogin) {
+            modalLogin.style.display = "none";
+        }
+        if (event.target == modalSignUp) {
+            modalSignUp.style.display = "none";
+        }
+    }
+
+// Get the modals
+    var modalLogin = document.getElementById('id01');
+    var modalSignUp = document.getElementById('id02');
+
+    // Function to toggle between login and sign-up forms
+    function toggleForms() {
+        modalLogin.style.display = "none";
+        modalSignUp.style.display = "block";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modalLogin) {
+            modalLogin.style.display = "none";
+        }
+        if (event.target == modalSignUp) {
+            modalSignUp.style.display = "none";
+        }
+    }
+
+
+
+
+
+</script>
+<script src="scriptTG.js"></script>
+</body></html>

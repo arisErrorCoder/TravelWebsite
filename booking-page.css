@@ -1,0 +1,509 @@
+ /* fonts links google fonts */
+
+ @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+
+ /* End of Google Fonts */
+
+ body {
+
+    font-family: 'Poppins', sans-serif;
+    background-image: url(https://images.wallpaperscraft.com/image/single/grass_mountains_fog_913128_3840x2400.jpg);
+}
+
+  /* ---------------------------------------------------------------------------------------nav bar css */
+  nav {
+
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Add position relative to the nav container */
+    }
+    
+    .logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    }
+    
+    .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 10px; /* Adjust the distance from the left side */
+    right: 50%; /* Vertically center the menu icon */
+    transform: translate(290px, -1px);
+    display: none;
+    }
+    
+    .menu-toggle {
+    display: none; /* Hide checkbox */
+    }
+    
+    /* Styles for navigation items */
+    /* Common styles for all screen sizes */
+    nav {
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Add position relative to the nav container */
+    }
+    
+    .logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    }
+    
+    .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 100px; /* Align to the right side */
+    top: 50%; /* Vertically center the menu icon */
+    transform: translateY(-50%);
+    display: none; /* Initially hide on larger screens */
+    }
+    
+    .menu-toggle {
+    display: none; /* Hide checkbox */
+    }
+    
+    /* Styles for navigation items */
+    .nav-items {
+    font-size: 1em;
+    display: flex;
+    color: black;
+    }
+    
+    .nav-items a {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    margin-left: 10px;
+    display: flex;
+    width: 90px;
+    }
+    
+    /* Styles for user actions */
+    .user-actions {
+    display: flex;
+    align-items: center;
+    }
+    
+    .login-btn{
+    margin-left: 15px;
+    padding: 10px 15px;
+    background-color: #002642;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    }
+    
+    /* Media Query for Tablet and Mobile */
+    @media only screen and (max-width: 768px) {
+    
+    .menu-icon {
+        display: block; /* Show menu icon on smaller screens */
+    }
+    .nav-items {
+        display: none; /* Initially hide on smaller screens */
+        flex-direction: column;
+        align-items: center; /* Center the nav items */
+        position: absolute;
+        top: 65.2px;
+        right: 0; /* Align to the right side */
+        width: 100%;
+        background-color: #ffffff95;
+        z-index: 1;
+    }
+    
+    .nav-items a {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        margin-left: 80%;
+    }
+    
+    .menu-toggle:checked + .menu-icon + .nav-items {
+        display: flex; /* Show nav items when checkbox is checked */
+    }
+    }
+
+    /*---------------------------------------------------------------- End of nav bar css */
+
+    /*----------------------------------------------------------------- Title and gallery css */
+    .trip-details{
+        padding: 0 12%;
+    }
+    .trip-title{
+        margin-top: 50px;
+    }
+    .trip-title h1{
+        font-weight: 600;
+    }
+    .trip-title .row{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 10px 0;
+    }
+
+    .trip-title span{
+        margin: 0 20px;
+    }
+    
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; /* Default to a single column */
+        gap: 20px; /* Adjust the gap between items */
+        max-width: 1000px; /* Adjust the maximum width of the container */
+        margin: 7px; /* Center the container on the page */
+    }
+
+    .left-side {
+        grid-column: span 2; /* Span one column for the left side */
+    }
+
+    .left-side img {
+        width: 100%; /* Make the image fill the container */
+        height:50vh; /* Maintain the aspect ratio */
+        display:block; /* Remove extra space below the image */
+        border-radius: 10px;
+    }
+
+    .right-side {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two columns for the right side */
+        grid-template-rows: 1fr 1fr; /* Two rows for the right side */
+        gap: 10px; /* Adjust the gap between small images */
+    }
+
+    .right-side img {
+        width: 100%; /* Make the image fill its container */
+        height: auto; /* Maintain the aspect ratio */
+        display: block; /* Remove extra space below the image */
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    /* Media query for tablet and mobile responsiveness */
+    @media (max-width: 768px) {
+        .grid-container {
+            grid-template-columns: 1fr; /* Switch to a single column layout */
+        }
+
+        .left-side {
+            grid-column: span 1; /* Span one column for the left side */
+        }
+
+        .right-side {
+            display: grid;
+        grid-template-columns: 1fr 1fr; /* Two columns for the right side */
+        grid-template-rows: 1fr 1fr; /* Two rows for the right side */
+        gap: 10px;/* Switch to a single column layout for the right side */
+        }
+    }
+
+    .parent {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 0px;
+      }
+      
+      /* Media query for mobile screens */
+      @media (max-width: 767px) {
+        .parent {
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(2, 1fr);
+          grid-row-gap: 10px;
+        }
+      }
+
+      .small-details{
+        color: white;
+        padding: 20px;
+        text-shadow: 2px 2px 0px rgba(0,0,0,0.6);
+  }
+  .small-details h2{
+      font-weight: 500;
+      text-shadow: -1px 1px 63px 0px rgb(0, 0, 0);
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.6); 
+     }
+  .small-details h4{
+      font-size: 22px;
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.6); 
+     }
+  .line{
+      border:0;
+      height: 1px;
+      background-color: black;
+      width: 100%;
+  }
+
+  .paynow{
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    color: white;
+    background-color: #002642;
+}
+
+@media (max-width: 767px) {
+  .small-details {
+    color: white;
+    width: 200px;
+  }
+}
+  
+      .details-container{
+        width: 500px;
+      padding: 20px;
+        border-radius: 10px;
+        box-shadow: -2px 1px 32px -5px rgba(0,0,0,0.75);
+        background-color: whitesmoke;
+    }
+    .details-content ul{
+        font-weight: 700;
+    }
+    
+    
+    .details-content h1 {
+      text-align: center;
+      font-family: Tahoma, Arial, sans-serif;
+      color: #06D85F;
+      margin: 80px 0;
+    }
+    
+    .box {
+      width: 40%;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.2);
+      padding: 35px;
+      border: 2px solid #fff;
+      border-radius: 20px/50px;
+      background-clip: padding-box;
+      text-align: center;
+    }
+    
+    .details-content .button {
+      color: rgb(15, 15, 212);
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+      margin-left: 20px;
+      transition: all 0.3s ease-out;
+    }
+    
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      transition: opacity 500ms;
+      visibility: hidden;
+      opacity: 0;
+    }
+    .overlay:target {
+      visibility: visible;
+      opacity: 1;
+    }
+    
+    .popup {
+      margin: 70px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 5px;
+      width: 30%;
+      position: relative;
+      transition: all 5s ease-in-out;
+    }
+    
+    .popup h2 {
+      margin-top: 0;
+      color: #333;
+      font-family: Tahoma, Arial, sans-serif;
+    }
+    .popup .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      transition: all 200ms;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+    }
+    .popup .close:hover {
+      color: #06D85F;
+    }
+    .popup .content {
+      max-height: 30%;
+      overflow: auto;
+    }
+    
+    @media screen and (max-width: 700px){
+      .box{
+        width: 70%;
+      }
+      .popup{
+        width: 70%;
+      }
+    }
+    
+     /* Media Query for Tablet */
+     @media (max-width: 768px) {
+      .details-container {
+                    max-width: 50%;
+                    transform:none;
+                    margin-left: 100px;
+                }
+            }
+    
+            /* Media Query for Mobile */
+            @media (max-width: 480px) {
+              .details-container {
+                    max-width: 50%;
+                transform: translateX(-120PX);
+                }
+            }
+    
+    /*----------------------------------------------------------------- End of Title and gallery css */
+
+    /*------------------------------------------------------------------- dropdown css */
+
+    .tab {
+        margin-top: 20px;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f0f0f0;
+        transition: all 3s;
+    }
+        button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 1.125rem;
+            &:hover {
+                background-color: #cccccc;
+            }
+            &.active {
+                background-color: #333333;
+                color: #ffffff;
+            }
+        }
+    
+    .tabcontent {
+        display: none;
+        padding: 0.5rem 1.25rem;
+        border: 1px solid #ccc;
+      background-color: #f0f0f0;
+        border-top: none;
+    }
+    
+    .is-hidden {
+        display: none !important;
+    }
+    .is-desktop {
+        display: block;
+        @media (max-width: 768px) {
+            display: none !important;
+        }
+    }
+    .is-mobile {
+        display: none !important;
+        @media (max-width: 768px) {
+            display: block !important;
+            margin-top: 20px;
+        }
+    }
+    
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;       /* Remove default arrow */
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.125rem;
+        background-color: #f0f0f0;
+        border: none;
+    }
+    
+    select::-ms-expand {
+      display: none;
+    }
+    
+    .select {
+        position: relative;
+        @media (max-width: 768px) {
+            &:after {
+                content: '';
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cg stroke='none'%3E%3Cpath d='M21.293,12.293,16,17.586l-5.293-5.293a1,1,0,0,0-1.414,1.414l6,6a1,1,0,0,0,1.414,0l6-6a1,1,0,0,0-1.414-1.414Z' fill='%23000000'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+                background-position: center;
+                background-size: contain;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 1rem;
+                pointer-events:none;
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+    
+
+    /*-------------------------------------------------------------------- end of dropdown bar css */
+
+    /*--------------------------------------------------------------------- about place css */
+.about-image img {
+ width: 100%;
+ border-radius: 10px;
+Box-shadow: -1px 1px 63px 0px rgb(0, 0, 0);
+}
+.about-image{
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.centered p{
+  text-shadow: -2px 4px 0px rgba(0,0,0,0.6);
+}
+.centered{
+  font-size: 70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-shadow: 1px 2px 30px rgba(0,0,0,0.53);
+  transform: translate(-50%, -50%);
+}
+
+.about-text{
+  color: white;
+}
+.about-text P ,h1{
+  margin-top: 10px;
+}
+
+    
+    /*--------------------------------------------------------------------- about place css */
+
+
+

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Page</title>
+    <link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+rel="stylesheet"
+/>
+<link
+href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+rel="stylesheet"
+/>
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css"
+rel="stylesheet"
+/>
+</head>
+<style>
+      @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+
+
+  /* nav bar css */
+  nav {
+
+color: #fff;
+padding: 10px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: relative; /* Add position relative to the nav container */
+}
+
+.logo img {
+width: 50px;
+height: 50px;
+margin-right: 10px;
+}
+
+.menu-icon {
+font-size: 24px;
+cursor: pointer;
+position: absolute;
+right: 10px; /* Adjust the distance from the left side */
+right: 50%; /* Vertically center the menu icon */
+transform: translate(290px, -1px);
+display: none;
+}
+
+.menu-toggle {
+display: none; /* Hide checkbox */
+}
+
+/* Styles for navigation items */
+/* Common styles for all screen sizes */
+nav {
+color: #fff;
+padding: 10px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: relative; /* Add position relative to the nav container */
+}
+
+.logo img {
+width: 50px;
+height: 50px;
+margin-right: 10px;
+}
+
+.menu-icon {
+font-size: 24px;
+cursor: pointer;
+position: absolute;
+right: 100px; /* Align to the right side */
+top: 50%; /* Vertically center the menu icon */
+transform: translateY(-50%);
+display: none; /* Initially hide on larger screens */
+}
+
+.menu-toggle {
+display: none; /* Hide checkbox */
+}
+
+/* Styles for navigation items */
+.nav-items {
+font-size: 1em;
+display: flex;
+color: black;
+}
+
+.nav-items a {
+text-decoration: none;
+color: black;
+font-weight: 700;
+margin-left: 10px;
+display: flex;
+width: 90px;
+}
+
+/* Styles for user actions */
+.user-actions {
+display: flex;
+align-items: center;
+}
+
+.login-btn, .signup-btn {
+margin-left: 15px;
+padding: 10px 15px;
+background-color: #002642;
+color: white;
+text-decoration: none;
+border-radius: 5px;
+font-weight: bold;
+cursor: pointer;
+}
+
+/* Media Query for Tablet and Mobile */
+@media only screen and (max-width: 768px) {
+
+.menu-icon {
+    display: block; /* Show menu icon on smaller screens */
+}
+.nav-items {
+    display: none; /* Initially hide on smaller screens */
+    flex-direction: column;
+    align-items: center; /* Center the nav items */
+    position: absolute;
+    top: 65.2px;
+    right: 0; /* Align to the right side */
+    width: 100%;
+    background-color: #ffffff95;
+    z-index: 1;
+}
+
+.nav-items a {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-left: 80%;
+}
+
+.menu-toggle:checked + .menu-icon + .nav-items {
+    display: flex; /* Show nav items when checkbox is checked */
+}
+}
+
+
+  /* end of nav bar css */
+body{
+    font-family: 'Poppins', sans-serif;
+    background-image: url(images/vecteezy_wildlife-elk-in-forest-nature-landscape-vector-illustration_.jpg);
+}
+   
+
+.title-order{
+        margin-left: 20px;
+        margin-top: 50px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 900;
+        font-size: 20px;
+    }
+  
+    .label span{
+        border: solid 1px;
+        border-radius: 5px;
+        margin-right: 50px;
+        color: #001a2dff;
+    }
+.label {
+    font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        margin-left: 20px;
+        margin-bottom: 12px;
+}
+.slider{
+    width: 900px;
+    max-width: 100vw;
+    height: 400px;
+    margin:0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.slider .list{
+    position: absolute;
+    width: max-content;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    transition: 1s;
+}
+.slider .list img{
+    width: 1400px;
+    max-width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+.slider .buttons{
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+.slider .buttons button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff5;
+    color: #fff;
+    border: none;
+    font-family: monospace;
+    font-weight: bold;
+}
+.slider .dots{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.slider .dots li{
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.slider .dots li.active{
+    width: 30px;
+}
+@media screen and (max-width: 768px){
+    .slider{
+        height: 400px;
+    }
+}
+
+.details-container{
+  max-width: 860px;
+  margin-top: 1.5%;
+  margin: 0, auto;
+  padding: 20px;
+    border-radius: 10px;
+    box-shadow: -2px 1px 32px -5px rgba(0,0,0,0.75);
+    background-color: whitesmoke;
+}
+.details-content ul{
+    font-weight: 700;
+}
+
+
+h1 {
+  text-align: center;
+  font-family: Tahoma, Arial, sans-serif;
+  color: #06D85F;
+  margin: 80px 0;
+}
+
+.box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.details-content .button {
+  color: rgb(15, 15, 212);
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: all 0.3s ease-out;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
+
+ /* Media Query for Tablet */
+ @media (max-width: 768px) {
+  .details-container {
+                max-width: 90%;
+            }
+        }
+
+        /* Media Query for Mobile */
+        @media (max-width: 480px) {
+          .details-container {
+                padding: 20px;
+            }
+        }
+
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  max-width:800px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.423);
+}
+
+/* Main column */
+.main {   
+  max-width: 200px;
+  border-radius: 5px;
+  background-color: #00274278;
+}
+
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+    padding: 0;
+  }
+}
+
+
+
+
+</style>
+<body>
+  
+<!-- nav bar -->
+
+<nav>
+    <div class="logo">
+        <img src="/TRAVEL GUIDE WEBSITE/images/icons/15537-200.png" alt="Logo"><span style="font-family: 'Righteous', sans-serif; color:#002642;"class="logo-name">TravelGuru</span> 
+    </div>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-icon"><i class="fa-solid fa-bars"></i> </label>
+    <div class="nav-items">
+        <a href="indexTG.html" style="color: black;">Home</a>
+        <a href="#aboutus" style="color: black;">About Us</a>
+        <a href="#services" style="color: black;">Package</a>
+        <a href="#contactus" style="color: black;">Contact Us</a>
+    </div>
+    <div class="user-actions">
+        <a href="loginandsigupform.html" class="login-btn">Login</a>
+    </div>
+  </nav>
+
+<!-- End of nav Bar -->
+
+<!-- content bar -->
+
+<div class="row">
+    <div class="side">
+        <div class="slider">
+            <div class="list">
+                <div class="item">
+                    <img src="https://wallpapercave.com/wp/wp8738941.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="https://wallpapercave.com/wp/wp2481247.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="https://wallpapercave.com/wp/wp8788365.jpg"alt="">
+                </div>
+                <div class="item">
+                    <img src="https://wallpapercave.com/wp/wp4956754.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="https://wallpapercave.com/wp/wp10649740.jpg" alt="">
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="prev"><</button>
+                <button id="next">></button>
+            </div>
+            <ul class="dots">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        <div class="details-container">
+          <div class="details-content">
+             <h2>Here’s a list of Activities & Inclusions in this package for you</h2>
+      <ul><li>Tour Manager: Service of an experienced MakeMyTrip Tour Manager
+      <li>City Tour Of: Paris
+      <li>Experience: River Seine Cruise</li></li></li></ul>
+      <a class="button" href="#popup1">View All Inclusions</a>
+          </div>
+      </div>
+      <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>Here’s a list of Activities & Inclusions in this package for you</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                <ul>
+                    <li>Tour Manager: Service of an experienced MakeMyTrip Tour Manager</li>
+                    <li>City Tour Of: Paris</li>
+                    <li>Experience: River Seine Cruise</li>
+                    <li>Accommodation in twin-bedded rooms in hotels as mentioned in the itinerary (or similar category hotels</li>
+                    <li>5 Indian Dinners in: Paris, Engelberg & Zurich</li>
+                    <li>Meals, coach transfers, transfers, entrance fees, sightseeing activities and surface transportations as indicated in the itinerary</li>
+                    <li>Travel insurance: valid for the duration of the holiday of tourists below 65 years of age</li>
+                    <li>Tips: To drivers and guides are included</li>
+                    </ul>
+                            </div>
+        </div>
+    </div>
+   
+   
+   
+   
+    </div>
+    <div class="main">
+        
+
+
+
+        
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est </p>
+    </div>
+  </div>
+
+<!-- end of content bar -->
+
+
+<!-- footer -->
+
+<!-- Footer -->
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted" style="background-color: rgba(0, 0, 0, 0.767);">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block" style="color:white;">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div style="color: white;">
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f" style="color: #3b5998;"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"style="color: #55acee;"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google" style="color: #dc4e41;"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram" style="color: #0077b5;"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin" style="color: #0077b5;"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github" style="color: #0077b5;"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4" style="color: white;">
+            <i class="fas fa-gem me-3"></i>TravelGuru
+          </h6>
+          <p style="color: white;">
+            "Jobs fill your pocket, but adventures fill your soul.” <br><br>
+      We completely swear by this and believe in fulfilling travel dreams that make you invariably rich by the day. We inspire our customers to live a rich life, full of unforgettable travel experiences.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4"style="color: white;">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Services
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Local Trips</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Holidays Plan</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Festival Booking</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Inter National Trip</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" style="color: white;">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">contact Us</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" style="color: white;">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> Kailasha street, NP12 Kailasha 06</p>
+          <p><i class="fas fa-envelope me-3"></i>
+            travelguru@gmail.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="color: white; background-color: #002642;">
+    © 2023 Copyright:
+    <a class="text-reset fw-bold" href="#">TravelGuru.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    let slider = document.querySelector('.slider .list');
+let items = document.querySelectorAll('.slider .list .item');
+let next = document.getElementById('next');
+let prev = document.getElementById('prev');
+let dots = document.querySelectorAll('.slider .dots li');
+
+let lengthItems = items.length - 1;
+let active = 0;
+next.onclick = function(){
+    active = active + 1 <= lengthItems ? active + 1 : 0;
+    reloadSlider();
+}
+prev.onclick = function(){
+    active = active - 1 >= 0 ? active - 1 : lengthItems;
+    reloadSlider();
+}
+let refreshInterval = setInterval(()=> {next.click()}, 3000);
+function reloadSlider(){
+    slider.style.left = -items[active].offsetLeft + 'px';
+    // 
+    let last_active_dot = document.querySelector('.slider .dots li.active');
+    last_active_dot.classList.remove('active');
+    dots[active].classList.add('active');
+
+    clearInterval(refreshInterval);
+    refreshInterval = setInterval(()=> {next.click()}, 10000);
+
+    
+}
+</script>
+</body>
+</html>
