@@ -378,6 +378,13 @@ padding-bottom:55px;
         color: white;
         transform: translateY(-380px);
     }
+    .chooseus img {
+      width: 15wh;
+      height: 15vh;
+    }
+    .chooseus-content p {
+      font-size: 15px;
+    }
 }
 
 /* inro */
